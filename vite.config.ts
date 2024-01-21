@@ -6,12 +6,13 @@ import vue from "@vitejs/plugin-vue";
 export default defineConfig({
   plugins: [vue()],
   build: {
-    outDir: './public'
+    outDir: "./public",
   },
-  publicDir:false,
+  publicDir: false,
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
-  }
+  },
+  base: process.env.NODE_ENV === "production" ? "/vuesample/" : "/",
 });
