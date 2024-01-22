@@ -4,7 +4,7 @@
       <Heading1 title="Vueサンプルサイト ログイン" />
     </div>
     <div class="form-group">
-      <label for="exampleInputEmail1" class="mb-2">ユーザー名</label>
+      <label for="exampleInputEmail1" class="mb-2">ユーザー名(vuesampleと入力してください)</label>
       <input
         type="email"
         class="form-control"
@@ -15,7 +15,7 @@
       />
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1" class="mb-2">パスワード</label>
+      <label for="exampleInputPassword1" class="mb-2">パスワード(vuesampleと入力してください)</label>
       <input
         type="password"
         class="form-control"
@@ -38,7 +38,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import Heading1 from "../components/Heading1.vue";
-import axios from "axios";
 import { useRouter } from "vue-router";
 const router = useRouter();
 const message = ref("");
@@ -53,13 +52,11 @@ onMounted(async () => {
 // メソッド: onSubmit
 const onSubmit = async (e: any) => {
   e.preventDefault();
-  try {
-    const { data } = await axios.post("/api/login", { username: username.value, password: password.value });
-    localStorage.setItem("bearer", data.token);
+  if (username.value === "vuesample" && password.value === "vuesample") {
+    localStorage.setItem("bearer", "loginOk");
     router.push({ path: "/datasourceid" });
-  } catch (error) {
+  } else {
     message.value = "認証できませんでした。入力情報が正しいかご確認ください。入力情報が正しい場合はお問合せください。";
-    console.error(error);
   }
 };
 </script>
@@ -70,7 +67,7 @@ const onSubmit = async (e: any) => {
   height: 380px;
   display: flex;
   flex-wrap: wrap;
-  margin: clamp(40px, 20%, 250px) auto 0;
+  margin: clamp(40px, 20%, 150px) auto 0;
 }
 
 .form-title {

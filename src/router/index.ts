@@ -13,7 +13,7 @@ const routes = [
     meta: {
       title: "Vueサンプルサイトとお店のデータ連携",
       desc: "Vueサンプルサイトとお店のデータ連携",
-      hideHeaderSidebar: false,
+      hideHeaderSidebar: true,
     },
   },
   {
