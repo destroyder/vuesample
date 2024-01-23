@@ -54,25 +54,8 @@ npm run dev
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
 npm run lint
-```
-
-### 概要
-
-- Vite + Vue3 で構築。
-- SPA、ハッシュモードで構築。
-- TypeScript も入っているが、Vite では厳格なチェックは入らず、js へのコンパイルのみになっている。
-- (現在不使用)local 環境の api 取得は、stg の api を取りに行くと CROS エラーになるため、json.server でモック api を使用。(内容は db.json に記載)。json.server は下記コマンドで開始する。
-
-```sh
-npm run json-server
 ```
