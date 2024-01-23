@@ -1,3 +1,18 @@
+# このサイトは
+
+- Vite + Vue3 で構築したサンプルサイトです。
+- https://destroyder.github.io/vuesample/dist/#/ にてご確認ください。
+
+# 概要
+
+- SPA、ハッシュモードで構築。
+- TypeScript も入っているが、Vite では厳格なチェックは入らず、js へのコンパイルのみになっている。
+- (現在不使用)local 環境の api 取得は、stg の api を取りに行くと CROS エラーになるため、json.server でモック api を使用。(内容は db.json に記載)。json.server は下記コマンドで開始する。
+
+```sh
+npm run json-server
+```
+
 # app
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -61,5 +76,3 @@ npm run lint
 ```sh
 npm run json-server
 ```
-
-- api 取得の URL はドメインを判定して、STG・本番を切り替えている。(STG 環境と本番環境を分けた構築ができていなかったため)

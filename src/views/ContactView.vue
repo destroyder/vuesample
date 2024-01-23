@@ -4,8 +4,8 @@
       <ConfirmText @errorJudge="setErrorView" />
       <Heading1 title="郵便番号から住所を検索" />
       <div>
-        <DuplicationList :number="propVal" />
-        <MappingModal :number="propVal" />
+        <InputAddress />
+        <MappingModal />
       </div>
     </div>
   </main>
@@ -13,22 +13,19 @@
 
 <script setup lang="ts">
 import { defineComponent, ref, onMounted } from "vue";
-import DuplicationList from "../components/DuplicationList.vue";
+import InputAddress from "../components/InputAddress.vue";
 import ConfirmText from "../components/ConfirmText.vue";
 import Heading1 from "../components/Heading1.vue";
 import MappingModal from "@/components/MappingModal.vue";
 
 const components = {
-  DuplicationList,
+  InputAddress,
   ConfirmText,
   Heading1,
   MappingModal,
 };
 
 defineComponent({ components });
-
-// 1: contact / 2: company
-const propVal = ref(1);
 
 // ConfirmTextエラーの際に非表示にする
 const errorView = ref(true);

@@ -2,6 +2,10 @@
   <div>
     <form>
       <div class="form-wrap">
+        <p>
+          このページでは元々は認証情報を入力してからサイトの使用が開始できるものでした。<br />
+          今回はサンプルなので、testと入力したらサービスが使えるものになっております。<br />
+        </p>
         <fieldset class="form-datasource">
           <label class="form-datasource-label" for="client_id">
             <span>testと入力して送信ボタンを押してください</span>
@@ -45,7 +49,7 @@ const submitForm = async () => {
   store.trueState();
   console.log(store.isInputComplete);
 
-  toaster.show("入力が完了しました。テスト連携ページにてご利用ください。", {
+  toaster.show("入力が完了しました。左のナビゲーションから、郵便番号から住所を検索ページをご利用ください。", {
     duration: 5000,
     type: "success",
   });

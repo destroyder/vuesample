@@ -40,6 +40,7 @@ const formCheck = computed(() => {
 
 const submitAddress = async () => {
   const getApiUrl = `https://zipcloud.ibsnet.co.jp/api/search?zipcode=` + address.value;
+  addressView.value = "通信中";
 
   try {
     const response = await requestApi(getApiUrl, "GET");
@@ -58,6 +59,7 @@ const submitAddress = async () => {
     addressView.value =
       responseData.results[0].address1 + responseData.results[0].address2 + responseData.results[0].address3;
   } catch (error) {
+    addressView.value = "エラーが発生しました。正しい郵便番号か、ご確認をお願いいたします。";
     console.log(error);
   }
 };

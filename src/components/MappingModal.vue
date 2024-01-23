@@ -14,7 +14,7 @@
         "
       >
         <div class="modal_status_content no_overflow">
-          <MappingSetting @modalCancel="cancelFlag" :number="propGroup.number" />
+          <MappingSetting @modalCancel="cancelFlag" />
         </div>
       </div>
     </div>
@@ -24,14 +24,6 @@
 <script setup lang="ts">
 import MappingSetting from "@/components/MappingSetting.vue";
 import { ref } from "vue";
-
-// contact or company
-const propGroup = defineProps({
-  number: {
-    type: Number,
-    required: true,
-  },
-});
 
 let modalOpen = ref(false);
 const openModal = () => {
