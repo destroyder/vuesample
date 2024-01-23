@@ -10,7 +10,7 @@
         class="form-control"
         id="exampleInputEmail1"
         aria-describedby="emailHelp"
-        placeholder="vuesampleと入力してください"
+        placeholder="ユーザー名"
         v-model="username"
       />
     </div>
@@ -20,7 +20,7 @@
         type="password"
         class="form-control"
         id="exampleInputPassword1"
-        placeholder="vuesampleと入力してください"
+        placeholder="パスワード"
         v-model="password"
       />
     </div>

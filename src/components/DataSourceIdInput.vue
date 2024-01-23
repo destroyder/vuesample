@@ -4,7 +4,7 @@
       <div class="form-wrap">
         <fieldset class="form-datasource">
           <label class="form-datasource-label" for="client_id">
-            <span>testと入力してください</span>
+            <span>testと入力して送信ボタンを押してください</span>
           </label>
           <input v-model="client_id" name="client_id" id="client_id" type="text" class="hs-input" inputmode="text" />
 
