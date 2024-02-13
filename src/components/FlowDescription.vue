@@ -10,11 +10,9 @@ import imgUrl from "../assets/img/noah.jpg";
 
 <style lang="scss" scoped>
 .flow {
-  margin-left: auto;
-  margin-right: auto;
-  width: 85%;
+  width: 75%;
   margin-bottom: 100px;
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 768px) {
     width: 100%;
   }
 }

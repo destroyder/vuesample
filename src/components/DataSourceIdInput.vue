@@ -1,11 +1,8 @@
 <template>
-  <div>
+  <div v-if="!store.isInputComplete">
     <form>
       <div class="form-wrap">
-        <p>
-          このページでは元々は認証情報を入力してからサイトの使用が開始できるものでした。<br />
-          今回はサンプルなので、testと入力したらサービスが使えるものになっております。<br />
-        </p>
+        <p>testと入力したらサービスが使えるものになっております。</p>
         <fieldset class="form-datasource">
           <label class="form-datasource-label" for="client_id">
             <span>testと入力して送信ボタンを押してください</span>
@@ -24,10 +21,13 @@
       </div>
     </form>
   </div>
+  <div v-else>
+    <p>入力が完了しています。左のナビゲーションから、郵便番号から住所を検索ページをご利用ください。</p>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { computed, ref, onMounted } from "vue";
+import { computed, initCustomFormatter, ref } from "vue";
 import { createToaster } from "@meforma/vue-toaster";
 import { useClientId } from "../stores/clientId";
 const toaster = createToaster();
@@ -47,8 +47,6 @@ const formCheck = computed(() => {
 const submitForm = async () => {
   // storeを更新
   store.trueState();
-  console.log(store.isInputComplete);
-
   toaster.show("入力が完了しました。左のナビゲーションから、郵便番号から住所を検索ページをご利用ください。", {
     duration: 5000,
     type: "success",

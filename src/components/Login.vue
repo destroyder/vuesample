@@ -58,7 +58,8 @@ onMounted(async () => {
 // メソッド: onSubmit
 const onSubmit = async (e: any) => {
   e.preventDefault();
-  if (username.value === "vuesample" && password.value === "vuesample") {
+  const passInput = "vuesample";
+  if (username.value === passInput && password.value === passInput) {
     localStorage.setItem("bearer", "loginOk");
     router.push({ path: "/datasourceid" });
   } else {

@@ -1,5 +1,5 @@
 <template>
-  <div class="form-wrap">
+  <div class="form-wrap" v-if="store.isInputComplete">
     <fieldset class="form-address">
       <label class="form-address-label" for="address">
         <span>郵便番号を入力してください</span>
@@ -19,12 +19,17 @@
       {{ addressView }}
     </div>
   </div>
+  <div v-else>
+    <p>まずは<router-link to="/datasourceid">こちら</router-link>から、認証情報を入力してください。</p>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import requestApi from "@/utils/requestApi";
 import { createToaster } from "@meforma/vue-toaster";
+import { useClientId } from "../stores/clientId";
+const store = useClientId();
 const toaster = createToaster();
 
 let address = ref();

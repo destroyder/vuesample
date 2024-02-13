@@ -1,7 +1,7 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
 //buttonDisable
-export const useButtonDisable = defineStore('buttonDisable', {
+export const useButtonDisable = defineStore("buttonDisable", {
   state: () => ({
     isStateActive: true,
   }),
@@ -15,28 +15,5 @@ export const useButtonDisable = defineStore('buttonDisable', {
     toggleState() {
       this.isStateActive = !this.isStateActive;
     },
-  },
-});
-
-
-// richCheckbox
-export const useRichCheckbox = defineStore('richCheckbox', {
-  state: () => ({
-    isContactChecked: false,
-    isCompanyChecked: false,
-  }),
-  actions: {
-    trueContactState() {
-      this.isContactChecked = true;
-    },
-    falseContactState() {
-      this.isContactChecked = false;
-    },
-    trueCompanyState() {
-      this.isCompanyChecked = true;
-    },
-    falseCompanyState() {
-      this.isCompanyChecked = false;
-    }
   },
 });
