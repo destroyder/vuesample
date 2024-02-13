@@ -2,6 +2,12 @@
   <form class="login">
     <div class="form-title">
       <Heading1 title="Vueサンプルサイト ログイン" />
+      <p>
+        このサイトはVueを使用して、コンポーネントの作成、routing、外部APIの連携を実施したサンプルサイトです。<br />
+        <a href="https://github.com/destroyder/vuesample/tree/main">こちら</a>にソースコードを公開しています。<br />
+        またReadmeにざっくりと仕様を記載しています。
+      </p>
+      <p>下記からvuesampleと入力することでログインできます。</p>
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1" class="mb-2">ユーザー名(vuesampleと入力してください)</label>
@@ -67,7 +73,7 @@ const onSubmit = async (e: any) => {
   height: 380px;
   display: flex;
   flex-wrap: wrap;
-  margin: clamp(40px, 20%, 150px) auto 0;
+  margin: clamp(20px, 15%, 100px) auto 0;
 }
 
 .form-title {
