@@ -2,12 +2,13 @@
   <form class="login">
     <div class="form-title">
       <Heading1 title="Vueサンプルサイト ログイン" />
-      <p>
-        このサイトはVueを使用して、コンポーネントの作成、routing、外部APIの連携を実施したサンプルサイトです。<br />
-        <a href="https://github.com/destroyder/vuesample/tree/main">こちら</a>にソースコードを公開しています。<br />
-        またReadmeにざっくりと仕様を記載しています。
-      </p>
-      <p>下記からvuesampleと入力することでログインできます。</p>
+      <div class="login-read">
+        <p>
+          このサイトはVueを使用して、コンポーネントの作成、routing、外部APIの連携を実施したサンプルサイトです。<br />
+          <a href="https://github.com/destroyder/vuesample/tree/main">こちら</a>にソースコードを公開しています。<br />
+        </p>
+        <p>下記からvuesampleと入力することでログインできます。</p>
+      </div>
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1" class="mb-2">ユーザー名(vuesampleと入力してください)</label>
@@ -45,6 +46,8 @@
 import { ref, onMounted } from "vue";
 import Heading1 from "../components/Heading1.vue";
 import { useRouter } from "vue-router";
+import { useClientId } from "../stores/clientId";
+const store = useClientId();
 const router = useRouter();
 const message = ref("");
 const username = ref("");
@@ -53,6 +56,8 @@ const password = ref("");
 onMounted(async () => {
   // bearerを削除
   localStorage.removeItem("bearer");
+  // storeの状態を初期化
+  store.falseState();
 });
 
 // メソッド: onSubmit
@@ -70,11 +75,18 @@ const onSubmit = async (e: any) => {
 
 <style lang="scss" scoped>
 .login {
-  width: 380px;
-  height: 380px;
+  width: 100%;
+  max-width: 420px;
+  max-height: 420px;
   display: flex;
   flex-wrap: wrap;
   margin: clamp(20px, 15%, 100px) auto 0;
+  &-read {
+    border: 1px solid #f0cec6;
+    padding: 20px 10px 5px;
+    background-color: #faf0ee;
+    margin-bottom: 20px;
+  }
 }
 
 .form-title {
