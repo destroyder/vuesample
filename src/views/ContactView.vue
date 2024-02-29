@@ -5,7 +5,6 @@
       <Heading1 title="郵便番号から住所を検索" />
       <div>
         <InputAddress />
-        <MappingModal />
       </div>
     </div>
   </main>
@@ -16,13 +15,11 @@ import { defineComponent, ref, onMounted } from "vue";
 import InputAddress from "../components/InputAddress.vue";
 import ConfirmText from "../components/ConfirmText.vue";
 import Heading1 from "../components/Heading1.vue";
-import MappingModal from "@/components/MappingModal.vue";
 
 const components = {
   InputAddress,
   ConfirmText,
   Heading1,
-  MappingModal,
 };
 
 defineComponent({ components });

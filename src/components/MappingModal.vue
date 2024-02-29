@@ -13,7 +13,7 @@
           }
         "
       >
-        <div class="modal_status_content no_overflow">
+        <div class="modal_status_content">
           <MappingSetting @modalCancel="cancelFlag" />
         </div>
       </div>

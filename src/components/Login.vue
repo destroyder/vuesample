@@ -1,13 +1,14 @@
 <template>
   <form class="login">
     <div class="form-title">
-      <Heading1 title="Vueサンプルサイト ログイン" />
+      <Heading1 title="サンプルサイト" />
       <div class="login-read">
         <p>
           このサイトはVueを使用して、コンポーネントの作成、routing、外部APIの連携を実施したサンプルサイトです。<br />
           <a href="https://github.com/destroyder/vuesample/tree/main">こちら</a>にソースコードを公開しています。<br />
         </p>
         <p>下記からvuesampleと入力することでログインできます。</p>
+        <p>また以前作成したデザイン一覧は<router-link to="/design">こちら</router-link>から閲覧できます。</p>
       </div>
     </div>
     <div class="form-group">

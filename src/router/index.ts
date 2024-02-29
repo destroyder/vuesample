@@ -3,6 +3,7 @@ import ContactView from "../views/ContactView.vue";
 import DataSourceIdView from "../views/DataSourceIdView.vue";
 import ExplanationView from "../views/ExplanationView.vue";
 import LoginView from "../views/LoginView.vue";
+import DesignView from "../views/DesignView.vue";
 import NotFound from "../views/NotFound.vue";
 
 const routes = [
@@ -57,6 +58,12 @@ const routes = [
     name: "NotFound",
     component: NotFound,
     meta: { title: "ページが存在しません。", desc: "ページが存在しません。", hideHeaderSidebar: false },
+  },
+  {
+    path: "/design",
+    name: "design",
+    component: DesignView,
+    meta: { title: "Design一覧", desc: "過去に作成したデザイン一覧です", hideHeaderSidebar: true },
   },
 ];
 
