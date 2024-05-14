@@ -51,7 +51,7 @@ const submitAddress = async () => {
     const response = await requestApi(getApiUrl, "GET");
 
     // エラー対応
-    if (!response.ok && response.status !== 200 && response.status !== 201) {
+    if (!response) {
       toaster.show("エラーが発生しました。再読み込みをして解決されないようでしたらお問合せください。", {
         duration: 5000,
         type: "error",
@@ -59,10 +59,7 @@ const submitAddress = async () => {
       return;
     }
 
-    const responseData = await response.json();
-
-    addressView.value =
-      responseData.results[0].address1 + responseData.results[0].address2 + responseData.results[0].address3;
+    addressView.value = response.results[0].address1 + response.results[0].address2 + response.results[0].address3;
   } catch (error) {
     addressView.value = "エラーが発生しました。正しい郵便番号か、ご確認をお願いいたします。";
     console.log(error);
